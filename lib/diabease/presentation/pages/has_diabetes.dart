@@ -32,9 +32,7 @@ class HasDiabetes extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 50,
-            ),
+            const Spacer(),
             Wrap(
               children: [
                 Text(
@@ -72,9 +70,7 @@ class HasDiabetes extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(
-              height: 64,
-            ),
+            const Spacer(),
           ],
         ),
       ),

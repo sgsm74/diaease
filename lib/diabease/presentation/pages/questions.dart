@@ -119,6 +119,10 @@ class _QuestionsState extends State<Questions> {
                                   width: 100,
                                   height: 50,
                                   child: TextFormField(
+                                    onTapOutside: (event) {
+                                      FocusManager.instance.primaryFocus
+                                          ?.unfocus();
+                                    },
                                     controller: ageTextController,
                                     cursorColor: Colors.white,
                                     keyboardType: TextInputType.number,
@@ -216,7 +220,7 @@ class _QuestionsState extends State<Questions> {
                               ],
                             ),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //obesity
                           Question(
                             title: questions[0],
@@ -227,7 +231,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //polyuria
                           Question(
                             title: questions[1],
@@ -238,7 +242,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //polydipsia
                           Question(
                             title: questions[2],
@@ -249,7 +253,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(
+                          const Spacer(
                             flex: 5,
                           ),
                         ],
@@ -267,7 +271,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //weakness
                           Question(
                             title: questions[4],
@@ -278,7 +282,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //polyphagia
                           Question(
                             title: questions[5],
@@ -289,7 +293,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //genital thrush
                           Question(
                             title: questions[6],
@@ -300,7 +304,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(
+                          const Spacer(
                             flex: 5,
                           ),
                         ],
@@ -318,7 +322,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //itching
                           Question(
                             title: questions[8],
@@ -329,7 +333,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //irritability
                           Question(
                             title: questions[9],
@@ -340,7 +344,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //delayed healing
                           Question(
                             title: questions[10],
@@ -351,7 +355,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(
+                          const Spacer(
                             flex: 5,
                           ),
                         ],
@@ -369,7 +373,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //muscle stiffness
                           Question(
                             title: questions[12],
@@ -380,7 +384,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           //alopecia
                           Question(
                             title: questions[13],
@@ -391,7 +395,7 @@ class _QuestionsState extends State<Questions> {
                               });
                             },
                           ),
-                          Spacer(),
+                          const Spacer(),
                           InkWell(
                             onTap: () {
                               BlocProvider.of<DiabeaseBloc>(context).add(
