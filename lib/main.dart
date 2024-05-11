@@ -1,13 +1,8 @@
-import 'dart:convert';
-
 import 'package:diabease/diabease/presentation/pages/has_diabetes.dart';
 import 'package:diabease/diabease/presentation/pages/no_diabetes.dart';
 import 'package:diabease/diabease/presentation/pages/questions.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sklite/SVM/SVM.dart';
-import 'package:sklite/ensemble/forest.dart';
-import 'package:sklite/utils/io.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      initialRoute: '/has-diabetes',
+      initialRoute: '/',
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/': (context) => const MyHomePage(),
@@ -44,26 +39,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late SVC svc;
-  late RandomForestClassifier randomForestClassifier;
-
-  @override
-  void initState() {
-    // loadModel("assets/my_model.json").then((x) {
-    //   //svc = SVC.fromMap(json.decode(x));
-
-    //   randomForestClassifier = RandomForestClassifier.fromMap(params6);
-    // });
-    declare();
-    super.initState();
-  }
-
-  void declare() async {
-    var params6 = await loadModel("assets/my_model.json");
-    randomForestClassifier =
-        RandomForestClassifier.fromMap(json.decode(params6));
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -141,11 +116,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        List<double> data = [55, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1];
-        final result = randomForestClassifier.predict(data);
-        print(result);
-      }),
     );
   }
 }
