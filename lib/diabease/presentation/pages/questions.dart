@@ -340,6 +340,17 @@ class _QuestionsState extends State<Questions> {
                         });
                       },
                     ),
+                    InkWell(
+                      onTap: () {},
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Image.asset(
+                          'assets/images/analyze.png',
+                          width: MediaQuery.of(context).size.width / 2,
+                          height: 80,
+                        ),
+                      ),
+                    )
                   ],
                 )
               ],
